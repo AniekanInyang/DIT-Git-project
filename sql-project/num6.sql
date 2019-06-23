@@ -1,0 +1,10 @@
+CREATE TABLE e_commerce(
+Invoice_No VARCHAR (10) NOT NULL,
+Stock_Code VARCHAR(10) NOT NULL,
+Description VARCHAR (200) NOT NULL,
+Quantity SMALLINT (300) NOT NULL, 
+Invoice_Date DATE NOT NULL,
+Unit_Price NUMERIC (11,2) NOT NULL,
+Customer_Id SERIAL NOT NULL, 
+Country VARCHAR (50) NOT NULL);
+
