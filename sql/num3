@@ -1,0 +1,9 @@
+
+SELECT *
+FROM Newsarticles
+WHERE heading ILIKE '%FIFA%'
+AND date BETWEEN '02/10/2016' AND '31/12/2016'; 
+
+
+
+

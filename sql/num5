@@ -1,0 +1,8 @@
+
+SELECT *
+FROM Newsarticles
+WHERE article  ILIKE '%TOKYO%';
+
+
+
+

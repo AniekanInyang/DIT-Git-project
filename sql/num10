@@ -1,0 +1,6 @@
+SELECT id,  DATE_PART('day', locationmilestone_lastremodeldate::timestamp - locationmilestone_opendate::timestamp)
+AS functioning_days
+FROM targetinfo
+where locationmilestone_lastremodeldate is not null
+ORDER BY functioning_days DESC
+LIMIT 1;

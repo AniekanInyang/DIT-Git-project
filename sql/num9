@@ -1,0 +1,9 @@
+
+SELECT DATE_PART('day', locationmilestone_lastremodeldate::timestamp - locationmilestone_opendate::timestamp)
+AS functioning_days
+FROM targetinfo;
+
+
+
+
+
