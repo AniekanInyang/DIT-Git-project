@@ -1,0 +1,2 @@
+select count(newstype='sports') from news_article
+where date_ng< '2017-01-01'

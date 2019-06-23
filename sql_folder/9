@@ -1,0 +1,1 @@
+select (lastremodeldate-opendate) as functioning_days from target_info2

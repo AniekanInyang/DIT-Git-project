@@ -1,0 +1,4 @@
+select storedistrictid, max(lastremodeldate-opendate) as functioning_days from target_info2
+group by storedistrictid 
+order by functioning_days desc
+limit 1

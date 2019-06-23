@@ -1,0 +1,3 @@
+select  article, heading, date_ng from news_article
+where heading like '%FIFA%' and date_ng<'2017-01-01'
+
