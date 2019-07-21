@@ -1,2 +1,4 @@
 this is before i created my branch
 After my branch Nathaniel
+
+git push --set-upstream origin Nathaniel
