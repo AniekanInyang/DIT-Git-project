@@ -1,0 +1,9 @@
+cd Desktop/ sql-project/
+git init .
+git checkout -b Abasieme
+git add .
+git commit -m "Adding sql project result files"
+git status
+git remote add origin https://github.com/AniekanInyang/DIT-Git-project.git
+git remote -v
+git push -u origin Abasieme --tags
