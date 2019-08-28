@@ -1,0 +1,68 @@
+No.1.
+
+CREATE TABLE news (
+ID serial PRIMARY KEY,
+Article VARCHAR(10000),
+Date Timestamp,
+Heading VARCHAR(1000),
+NewsType VARCHAR(100)
+);
+
+
+
+No.3
+SELECT NewsType, COUNT(Date)
+FROM news
+GROUP BY NewsType;
+
+
+
+N0.4
+
+SELECT COUNT(Article)
+FROM news
+WHERE Heading LIKE '%FIFA%';
+
+No.5
+SELECT Article 
+FROM news
+WHERE Article LIKE '%Tokyo%';
+
+
+No.6
+CREATE TABLE ecommerce (
+InvoiceNo VARCHAR(50),
+StockCode VARCHAR(100),
+Description VARCHAR(200),
+Quantity INTEGER,
+InvoiceDate Date,
+UnitPrice FLOAT,
+Customer INTEGER,
+Country VARCHAR(100)
+);
+
+
+No.8
+SELECT InvoiceNo, SUM(Quantity*UnitPrice) AS SPEND
+FROM ecommerce
+GROUP BY InvoiceNo;
+
+
+No.9
+SELECT Description, COUNT(Quantity)
+FROM ecommerce
+GROUP BY Description
+ORDER BY COUNT(Quantity) DESC;
+
+
+No.10
+SELECT Customer AS Customer_ID, SUM(Quantity) AS Total_Quantity,SUM(UnitPrice) AS Total_Unit_Price
+FROM  ecommerce
+GROUP BY Customer_ID
+ORDER BY Total_Unit_Price DESC;
+
+
+
+
+
+
