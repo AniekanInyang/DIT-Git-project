@@ -1,12 +1,13 @@
 import numpy as np
 import pandas as pd
+from sklearn.utils import shuffle
 
 # load the data
 df = pd.read_csv('weight-height.csv')
 data = df.values
 
 # shuffle it
-np.random.shuffle(data)
+shuffle(data)
 
 X = data[:, 1:].astype(np.float)
 Y = data[:, 0]
@@ -57,7 +58,7 @@ Initialize random weights. Calculate the model output.
 
 # Initialize random weights
 N, D = Xtrain.shape
-w = np.random.randn(D+1)
+w = np.random.randn(D+1) / np.sqrt(D + 1)
 b = 0  # bias term
 
 ones = np.ones((N, 1))
@@ -87,15 +88,14 @@ print("Score for Question 3:", classification_rate(Ytrain, predictions))
 QUESTION 4
 
 Using the loss function, Choose a learning rate and use gradient descent to attempt to minimize this loss. 
-
 Why did you choose these parameters?
 
 ANSWER
 ======
-I chose the parameters values used below because they best control how much to change the model in response to the 
+I chose the parameters values used because they best control how much to change the model in response to the 
 estimated error each time the model weights are updated
 
-I also chose these values because they give me higher classification rate(score)
+I also chose these values because they give me a classification rate(score) of 1
 """
 
 
@@ -136,10 +136,10 @@ and the model output after gradient descent
 # Print the loss for some steps is above in question 4
 
 # Print the final weight
-print("Final weight: ", w)
+print("Final weight: \n", w)
 
 # Print the initial model output
-print("Initial model output: ", P_Y_given_X)
+print("Initial model output: \n", P_Y_given_X)
 
 # Print the model output after gradient descent
-print("Final model output: ", pYtrain)
+print("Final model output: \n", pYtrain)
