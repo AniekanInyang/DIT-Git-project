@@ -95,9 +95,7 @@ ANSWER
 I chose the parameters values used below because they best control how much to change the model in response to the 
 estimated error each time the model weights are updated
 
-Since the amount of intelligence that a logistic regression machine learning algorithm has depends on how good its 
-weight values are, I also chose these parameters to help train the model to learn from the given data how to make  
-accurate output predictions through generating good weight vector values.
+I also chose these values because they give me higher classification rate(score)
 """
 
 
