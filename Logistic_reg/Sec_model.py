@@ -1,6 +1,6 @@
 import numpy as np
 from Method import get_binary_data
-from sklearn.utils import shuffle
+# from sklearn.utils import shuffle
 
 Xtrain, Ytrain, Xtest, Ytest = get_binary_data()
 
