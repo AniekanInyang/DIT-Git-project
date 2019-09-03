@@ -34,7 +34,10 @@ def cross_entropy(T, pY):
 # train loop
 train_costs = []
 test_costs = []
-learning_rate = 0.001 #This is the best learning rate  but we hae others like 0.1, 0.01 and 0.03so as to avoid the model fom shooting out of range and therefore returns a divion error
+learning_rate = 0.001 
+#Question 4
+#This is the best learning rate  but we hae others like 0.1, 0.01 and 0.03 so as to avoid the model fom shooting out of range and therefore returns a divion error
+#also helps to control how much to change the model in response to the loss function error
 for i in range(10000): 
     pYtrain = forward(Xtrain, W, b)
     pYtest = forward(Xtest, W, b)
@@ -47,7 +50,7 @@ for i in range(10000):
     # gradient descent   #the vectorize formula we derived
     W -= learning_rate*Xtrain.T.dot(pYtrain - Ytrain)
     b -= learning_rate*(pYtrain - Ytrain).sum()
-#     Y = sigmoid(Xtrain.dot(W) + b)
+    Y = sigmoid(X.dot(W) + b)
     if i % 1000 == 0: #so that we print evey 1000 steps
         # recalculate Y
         
