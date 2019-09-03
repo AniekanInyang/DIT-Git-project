@@ -56,7 +56,7 @@ for i in range(10000):
         
         print(i, ctrain, ctest)
 
-print("Score:", classification_rate(Y, predictions))
+print("Score after Gradient descent:", classification_rate(Y, predictions))
 print("Final train classification_rate:", classification_rate(Ytrain, np.round(pYtrain)))
 print("Final test classification_rate:", classification_rate(Ytest, np.round(pYtest)))
 print("Final w:", W)
