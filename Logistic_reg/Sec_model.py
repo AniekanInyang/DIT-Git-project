@@ -55,7 +55,7 @@ for i in range(10000):
         # recalculate Y
         
         print(i, ctrain, ctest)
-
+#QUESTION 5
 print("Score after Gradient descent:", classification_rate(Y, predictions))
 print("Final train classification_rate:", classification_rate(Ytrain, np.round(pYtrain)))
 print("Final test classification_rate:", classification_rate(Ytest, np.round(pYtest)))

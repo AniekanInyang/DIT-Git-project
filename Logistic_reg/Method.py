@@ -20,10 +20,12 @@ def get_data():
   X = data[:, :-1]
   Y = data[:,-1]
 
+  #QUESTION 1
   # normalize numerical columns for both X1 AND X2
   X[:,1] = (X[:,1] - X[:,1].mean()) / X[:, 1].std()
   X[2] = (X[2] - X[2].mean()) / X[2].std()
     
+  # QUESTION 2
   # split train and test
   Xtrain = X[:-500]
   Ytrain = Y[:-500]

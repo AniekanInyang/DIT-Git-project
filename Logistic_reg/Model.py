@@ -3,6 +3,8 @@ from Method import get_binary_data
 
 X, Y, _, _ = get_binary_data()
 
+#QUESTION 3
+
 # randomly initialize weights
 D = X.shape[1]  
 W = np.random.randn(D) 
