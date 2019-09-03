@@ -3,6 +3,7 @@ from Method import get_binary_data
 # from sklearn.utils import shuffle
 
 Xtrain, Ytrain, Xtest, Ytest = get_binary_data()
+X, Y, _, _ = get_binary_data()
 
 # we randomly our initialize weights
 D = Xtrain.shape[1]
@@ -18,9 +19,12 @@ def sigmoid(a):
 def forward(X, W, b):
     return sigmoid(X.dot(W) + b)
 
+P_Y_given_X = forward(X, W, b)
+predictions = np.round(P_Y_given_X)
 # calculate the accuracy
 def classification_rate(Y, P):
     return np.mean(Y == P)
+
 
 # cross entropy
 epsilon = 1e-5
@@ -43,7 +47,7 @@ for i in range(10000):
     # gradient descent   #the vectorize formula we derived
     W -= learning_rate*Xtrain.T.dot(pYtrain - Ytrain)
     b -= learning_rate*(pYtrain - Ytrain).sum()
-    Y = sigmoid(X.dot(W) + b)
+#     Y = sigmoid(Xtrain.dot(W) + b)
     if i % 1000 == 0: #so that we print evey 1000 steps
         # recalculate Y
         
