@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-# from sklearn.utils import shuffle
+from sklearn.utils import shuffle
 import os
 
 
@@ -11,14 +11,17 @@ def get_data():
   new_female_df = df[0] == "Female"
   df.loc[new_male_df, 0] = 0
   df.loc[new_female_df, 0] = 1
-  data = df[[ 1, 2, 0]].astype(float).values
+  data = df.values
     
 # shuffle it
-  np.random.shuffle(data)
+  shuffle(data)
  
   # split features and labels into X and Y
-  X = data[:, :-1]
-  Y = data[:,-1]
+  # X = data[:, :-1]
+  # Y = data[:,-1]
+
+  X = data[:, 1:]
+  Y = data[:,0]
 
   #QUESTION 1
   # normalize numerical columns for both X1 AND X2

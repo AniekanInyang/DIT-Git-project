@@ -34,7 +34,7 @@ def cross_entropy(T, pY):
 # train loop
 train_costs = []
 test_costs = []
-learning_rate = 0.001 
+learning_rate = 0.01 
 #Question 4
 #This is the best learning rate  but we hae others like 0.1, 0.01 and 0.03 so as to avoid the model fom shooting out of range and therefore returns a divion error
 #also helps to control how much to change the model in respect to the loss function error
