@@ -129,11 +129,10 @@ if __name__ == '__main__':
     
     
 # 9. Why did you choose your learning rate and epochs?
-# Ans: the learning rate helpsme in achieving a perfect classification rate of 1.0 
-#      and i choose epochs of 252 as we have to split our data
+# Ans: the learning rate and epochs helps me in achieving a perfect classification rate of 1.0 
 
 # 10. What can you do to increase train and test accuracy?
 #Ans: by making the best use of our hyperparameters like like the learning rate, bias term and
-    # also ensuring all null values are properly taken care ofand finally ensuring
+    # also ensuring all null values are properly taken care of and finally ensuring
     # all input features in different columns does not outweights others which can
-    # result to overfitting which will affect our output.
+    # result to overfitting and eventually affect our output.
