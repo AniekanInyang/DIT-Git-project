@@ -1,0 +1,19 @@
+#  1. What is the difference in the implementation of the Bayes and Naïve Bayes model
+
+Ans:
+   the difference is that while Naives bayes uses variance in it's implementation Bayes
+   uses full covariance matrix which significantly improves training score compare to Naive baye's.
+   in the fit function, we calculate and stored the covariance instaed of the variance in naive baye's
+   the covariance is then passed into the predict function in place of the variance
+
+ 9. Why did you choose your learning rate and epochs?
+
+ Ans: the learning rate helps me in achieving a perfect classification rate of 1.0 
+      and i choose epochs of 252 as we have to split our data
+
+10. What can you do to increase train and test accuracy?
+
+Ans: by making the best use of our hyperparameters like like the learning rate, bias term and
+     also ensuring all null values are properly taken care of and finally ensuring
+     all input features in different columns does not outweights others which can
+     result to overfitting which will enventually affect our output.

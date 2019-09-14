@@ -1,9 +1,9 @@
 import numpy as np
-from Method import get_binary_data
-# from sklearn.utils import shuffle
+from Method import get_data
+from sklearn.utils import shuffle
 
-Xtrain, Ytrain, Xtest, Ytest = get_binary_data()
-X, Y, _, _ = get_binary_data()
+Xtrain, Ytrain, Xtest, Ytest = get_data()
+X, Y, _, _ = get_data()
 
 # we randomly our initialize weights
 D = Xtrain.shape[1]

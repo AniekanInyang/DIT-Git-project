@@ -45,11 +45,11 @@ def get_data():
   return Xtrain, Ytrain, Xtest, Ytest
 
 
-def get_binary_data():
-  # return only the data from the first 2 classes in binary data as we are not returning dataset
-  Xtrain, Ytrain, Xtest, Ytest = get_data() 
-  X2train = Xtrain[Ytrain <= 1]
-  Y2train = Ytrain[Ytrain <= 1]
-  X2test = Xtest[Ytest <= 1]
-  Y2test = Ytest[Ytest <= 1]
-  return X2train, Y2train, X2test, Y2test
+# def get_binary_data():
+#   # return only the data from the first 2 classes in binary data as we are not returning dataset
+#   Xtrain, Ytrain, Xtest, Ytest = get_data() 
+#   X2train = Xtrain[Ytrain <= 1]
+#   Y2train = Ytrain[Ytrain <= 1]
+#   X2test = Xtest[Ytest <= 1]
+#   Y2test = Ytest[Ytest <= 1]
+#   return X2train, Y2train, X2test, Y2test

@@ -1,7 +1,7 @@
 import numpy as np
-from Method import get_binary_data
+from Method import get_data
 
-X, Y, _, _ = get_binary_data()
+X, Y, _, _ = get_data()
 
 #QUESTION 3
 
