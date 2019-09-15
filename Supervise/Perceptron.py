@@ -44,10 +44,10 @@ def get_data(limit=None):
     df.loc[new_Rural_df, 11] = 0
     df.loc[new_Semiurban_df, 11] = 0.5
     df.loc[new_Urban_df, 11] = 1
-    df.drop(columns = [0, 3, 9], inplace = True)
     data = df.dropna()
+    new_data = data.drop(columns = [0, 3, 9])
     scaler = MinMaxScaler()
-    data_scaled = scaler.fit_transform(data)
+    data_scaled = scaler.fit_transform(new_data)
     np.random.shuffle(data_scaled)
     
    
@@ -64,13 +64,13 @@ def get_data(limit=None):
             Y = Y2
             
     
-    if limit is not None:   #we set a liit so that our algorithm will not take too long
+    if limit is not None:   #we set a limit so that our algorithm will not take too long
         X, Y = X[:limit], Y[:limit]
     return X, Y
     
 
 class Perceptron: 
-    def fit(self, X, Y, learning_rate=0.1, epochs=252):
+    def fit(self, X, Y, learning_rate=0.1, epochs=240):
         
 
         # initialize random weights
@@ -89,7 +89,7 @@ class Perceptron:
                 break
 
             # choose a random incorrect sample
-            i = np.random.choice(incorrect) # next we choose the random sample from the incorrect sample
+            i = np.random.choice(incorrect) # next we choose the random sample from the incorrect sample to update w and b
             self.w += learning_rate*Y[i]*X[i]
             self.b += learning_rate*Y[i]
 

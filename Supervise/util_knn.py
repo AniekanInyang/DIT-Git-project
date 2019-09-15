@@ -49,10 +49,10 @@ def get_data(limit=None):
     df.loc[new_Rural_df, 11] = 0
     df.loc[new_Semiurban_df, 11] = 0.5
     df.loc[new_Urban_df, 11] = 1
-    df.drop(columns = [0, 3, 9], inplace = True)
     data = df.dropna()
+    new_data = data.drop(columns = [0, 3, 9])
     scaler = MinMaxScaler()
-    data_scaled = scaler.fit_transform(data)
+    data_scaled = scaler.fit_transform(new_data)
     np.random.shuffle(data_scaled)
    
     X = data_scaled[:, :8]
