@@ -50,9 +50,9 @@ def get_data(limit=None):
   N = len(Y)
   Y2 = np.array([1] * N)
   for n in range(N):
-      if Y[n] == 'N':
+      if Y[n] == 0:
           Y2[n] = -1
-      if len(Y[Y == 'N']) == len(Y2[Y2 == -1]):
+      if len(Y[Y == 0]) == len(Y2[Y2 == -1]):
           Y = Y2
           
   
