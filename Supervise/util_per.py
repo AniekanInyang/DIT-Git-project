@@ -47,7 +47,7 @@ def get_data(limit=None):
   X = data_scaled[:, :8]
   Y = data_scaled[:, 9]
   
-  #final loan_status
+  #final loan_status after Knn
   #to change the loan value to -1 and 1
   N = len(Y)
   Y2 = np.array([1] * N)
