@@ -71,7 +71,7 @@ if __name__ == '__main__':
     
     
 # 9. Why did you choose your learning rate and epochs?
-# Ans: the learning rate and epochs helps me in achieving a perfect classification rate of 1.0 
+# Ans: the learning rate and epochs helps me in achieving a classification rate of 0.8 
 
 # 10. What can you do to increase train and test accuracy?
 #Ans: by making the best use of our hyperparameters like like the learning rate, bias term and

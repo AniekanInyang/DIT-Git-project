@@ -29,7 +29,8 @@ def get_data(limit=None):
   new_Y = df[12] == "Y"
   new_N = df[12] == "N"
   df.loc[new_Y, 12] = 1
-  df.loc[new_N, 12] = -1
+  df.loc[new_N, 12] = 0
+
   new_Rural_df = df[11] == "Rural"
   new_Semiurban_df = df[11] == "Semiurban"
   new_Urban_df = df[11] == "Urban"
@@ -46,6 +47,7 @@ def get_data(limit=None):
   X = data_scaled[:, :8]
   Y = data_scaled[:, 9]
   
+  #final loan_status
   #to change the loan value to -1 and 1
   N = len(Y)
   Y2 = np.array([1] * N)
