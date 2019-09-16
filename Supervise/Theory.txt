@@ -8,8 +8,8 @@ Ans:
 
  9. Why did you choose your learning rate and epochs?
 
- Ans: the learning rate helps me in achieving a perfect classification rate of 1.0 
-      and i choose epochs of 252 as we have to split our data
+ Ans: the learning rate helps in achieving a perfect classification rate of 1.0, but in which i got 0.8 
+      and i choose epochs of 240 as we have to split our data
 
 10. What can you do to increase train and test accuracy?
 
