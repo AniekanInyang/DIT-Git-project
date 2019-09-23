@@ -124,13 +124,13 @@ def main():
     plt.scatter(X[:,0], X[:,1])
     plt.show()
 
-    K = 3 
+    K = 3 # i got this from choose_k files
     plot_k_means(X, K, beta=1.0, show_plots=True)
 
-    K = 3 
+    K = 3 #
     plot_k_means(X, K, beta=3.0, show_plots=True)
 
-    K = 3 
+    K = 3 # 
     plot_k_means(X, K, beta=10.0, show_plots=True)
 
     K = 5 # what happens if we choose a "bad" K?
@@ -138,6 +138,7 @@ def main():
 
     K = 5 # what happens if we change beta?
     plot_k_means(X, K, max_iter=30, beta=0.3, show_plots=True)
+
 
     
 
