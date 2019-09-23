@@ -1,0 +1,2 @@
+The important kmeans files is to evaluate my clusters
+I use the util_choosing.py to choose my k and then clusters my distribution

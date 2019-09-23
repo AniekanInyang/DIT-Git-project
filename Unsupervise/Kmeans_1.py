@@ -23,17 +23,13 @@ def get_data(limit=None):
     print("Reading in and transforming data...")
     df = pd.read_csv("Mall_Customers.csv").dropna()
     df.drop(columns =["CustomerID", "Gender", "Annual Income (k$)"], inplace=True)
-    df[["Spending Score (1-100)", "Age"]]
-#     new_male_df = df["Gender"] == "Male"
-#     new_female_df = df["Gender"] == "Female"
-#     df.loc[new_male_df, "Gender"] = 1
-#     df.loc[new_female_df, "Gender"] = 0
-    data = df.values
-#     scaler = MinMaxScaler()
-#     data_scaled = scaler.fit_transform(data)
-    np.random.shuffle(data)
-    X = data[:, 1:] / 99  # divide by the maximum value
-    Y = data[:, 0]
+    data = df[["Spending Score (1-100)", "Age"]]
+
+    scaler = MinMaxScaler()
+    data_scaled = scaler.fit_transform(data)
+    np.random.shuffle(data_scaled)
+    X = data_scaled[:, 1:] 
+    Y = data_scaled[:, 0]
     if limit is not None:
         X, Y = X[:limit], Y[:limit]
     return X, Y

@@ -5,8 +5,8 @@ from future.utils import iteritems
 from builtins import range, input
 # Note: you may need to update your version of future
 # sudo pip install -U future
-
-
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import pairwise_distances
@@ -93,23 +93,26 @@ def plot_k_means(X, K, max_iter=20, beta=1.0, show_plots=False):
 def get_simple_data():
     df = pd.read_csv("Mall_Customers.csv").dropna()
     df.drop(columns =["CustomerID", "Gender"], inplace=True)
-    new_data = df[["Age", "Spending Score (1-100)"]]
+    new_data = df[["Annual Income (k$)", "Spending Score (1-100)"]]
 #     new_male_df = df["Gender"] == "Male"
 #     new_female_df = df["Gender"] == "Female"
 #     df.loc[new_male_df, "Gender"] = 1
 #     df.loc[new_female_df, "Gender"] = 0
-    data = new_data.values
+    scaler = MinMaxScaler()
+    data_scaled = scaler.fit_transform(new_data)
+    np.random.shuffle(data_scaled)
+    # X = data_scaled[:, 1:] 
 #     X = data[:, 0:]
     # assume 3 means
     #creating 3 guassian class
     D = 2 # so we can visualize it more easily
-    s = 0.2 # separation so we can control how far apart the means are
+    s = 4 # separation so we can control how far apart the means are
     mu1 = np.array([0, 0]) #this is going to be the origin
     mu2 = np.array([s, s])
     mu3 = np.array([0, s])
 
     N = 200 # number of samples
-    X = data[:, 0:]
+    X = data_scaled[:, 0:]
     X[:68, :] = np.random.randn(68, D) + mu1
     X[68:134, :] = np.random.randn(66, D) + mu2
     X[134:, :] = np.random.randn(66, D) + mu3
@@ -133,7 +136,11 @@ def main():
     K = 3 # luckily, we already know this
     plot_k_means(X, K, beta=10.0, show_plots=True)
 
-    
+    K = 3 # luckily, we already know this
+    plot_k_means(X, K, beta=10.0, show_plots=True)
+
+    K = 5 # luckily, we already know this
+    plot_k_means(X, K, beta=30.0, show_plots=True)
 
 
 if __name__ == '__main__':

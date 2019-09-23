@@ -9,7 +9,7 @@ from builtins import range, input
 
 import numpy as np
 import matplotlib.pyplot as plt
-from util_choosing_k import plot_k_means, get_simple_data, cost
+from util_choosingk2 import plot_k_means, get_simple_data, cost
 
 
 def main():
@@ -26,7 +26,7 @@ def main():
     costs[k] = c
 
   plt.plot(costs)
-  plt.title("Cost vs K: for kmeans_1")
+  plt.title("Cost vs K: for kmeans_2")
   plt.show()
 
 

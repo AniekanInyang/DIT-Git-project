@@ -5,11 +5,13 @@ from future.utils import iteritems
 from builtins import range, input
 # Note: you may need to update your version of future
 # sudo pip install -U future
-from sklearn.preprocessing import MinMaxScaler
-import pandas as pd
+
+
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.metrics.pairwise import pairwise_distances
+import pandas as pd
+from sklearn.preprocessing import MinMaxScaler
 
 
 #calculating squared distance
@@ -95,16 +97,14 @@ def get_simple_data():
     df = pd.read_csv("Mall_Customers.csv").dropna()
     df.drop(columns =["CustomerID", "Gender"], inplace=True)
     new_data = df[["Spending Score (1-100)", "Age"]]
-    # data = new_data.values
+#     data = new_data.values
     scaler = MinMaxScaler()
     data_scaled = scaler.fit_transform(new_data)
     np.random.shuffle(data_scaled)
-    # X = data_scaled[:, 1:] 
-#     X = data[:, 0:]
     # assume 3 means
     #creating 3 guassian class
     D = 2 # so we can visualize it more easily
-    s = 4 # separation so we can control how far apart the means are
+    s = 0.2 # separation so we can control how far apart the means are
     mu1 = np.array([0, 0]) #this is going to be the origin
     mu2 = np.array([s, s])
     mu3 = np.array([0, s])
@@ -115,7 +115,7 @@ def get_simple_data():
     X[68:134, :] = np.random.randn(66, D) + mu2
     X[134:, :] = np.random.randn(66, D) + mu3
     return X
- 
+
 
 def main():
     X = get_simple_data()
@@ -124,17 +124,22 @@ def main():
     plt.scatter(X[:,0], X[:,1])
     plt.show()
 
-    K = 3 # luckily, we already know this
+    K = 3 
     plot_k_means(X, K, beta=1.0, show_plots=True)
 
-    K = 3 # luckily, we already know this
+    K = 3 
     plot_k_means(X, K, beta=3.0, show_plots=True)
 
-    K = 3 # luckily, we already know this
+    K = 3 
     plot_k_means(X, K, beta=10.0, show_plots=True)
 
-    K = 5 # luckily, we already know this
-    plot_k_means(X, K, beta=30.0, show_plots=True)
+    K = 5 # what happens if we choose a "bad" K?
+    plot_k_means(X, K, max_iter=30, show_plots=True)
+
+    K = 5 # what happens if we change beta?
+    plot_k_means(X, K, max_iter=30, beta=0.3, show_plots=True)
+
+    
 
 
 if __name__ == '__main__':

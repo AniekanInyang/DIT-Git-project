@@ -16,7 +16,7 @@ from sklearn.preprocessing import MinMaxScaler
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from util_3 import plot_k_means, get_simple_data
+from util_2 import plot_k_means, get_simple_data
 from datetime import datetime
 
 def get_data(limit=None):
@@ -24,16 +24,13 @@ def get_data(limit=None):
     df = pd.read_csv("Mall_Customers.csv").dropna()
     df.drop(columns =["CustomerID", "Gender", "Age"], inplace=True)
     new_df = df[["Annual Income (k$)", "Spending Score (1-100)"]]
-#     new_male_df = df["Gender"] == "Male"
-#     new_female_df = df["Gender"] == "Female"
-#     df.loc[new_male_df, "Gender"] = 1
-#     df.loc[new_female_df, "Gender"] = 0
+
     data = new_df.values
-#     scaler = MinMaxScaler()
-#     data_scaled = scaler.fit_transform(data)
-    np.random.shuffle(data)
-    X = data[:, 0:] / 99
-    Y = data[:, 1]
+    scaler = MinMaxScaler()
+    data_scaled = scaler.fit_transform(data)
+    np.random.shuffle(data_scaled)
+    X = data_scaled[:, 0:] 
+    Y = data_scaled[:, 1]
     if limit is not None:
         X, Y = X[:limit], Y[:limit]
     return X, Y
