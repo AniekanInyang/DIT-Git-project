@@ -113,5 +113,5 @@ if __name__ == '__main__':
   
 
 # Question 3
-# The best and only way to improve our model is by adding more columns which invariably
-# increases the number of features we are training on.
+# The best and only way to improve our model is by adding more columns which invariably means
+# increasing the number of features we are training on.
