@@ -4,8 +4,8 @@ from __future__ import print_function, division
 from builtins import range, input
 # Note: you may need to update your version of future
 # sudo pip install -U future
-
-
+from sklearn.preprocessing import MinMaxScaler
+import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.tree import DecisionTreeRegressor
@@ -19,7 +19,7 @@ scaler = MinMaxScaler()
 data_scaled = scaler.fit_transform(data)
 np.random.shuffle(data_scaled)
    
-X = data_scaled[:, :2]
+X = data_scaled[:, :3]
 Y = data_scaled[:, 3]
 
 # get the training data
@@ -29,6 +29,7 @@ idx = np.random.choice(T, size=N, replace=False) #from T we'll get the index, we
 
 Xtrain = X[idx]
 Ytrain = Y[idx]
+print(Xtrain)
 # print(Xtrain)
 # try a lone decision tree so that we can compare the ensemble to the first result
 print("Value of Y is: ",Y)
@@ -81,6 +82,7 @@ prediction = model.predict(X)
 plt.plot(X, prediction)
 plt.plot(X, Y)
 plt.show()
+
 
 # Question 3
 # The best and only way to improve our model is by adding more columns which invariably means
