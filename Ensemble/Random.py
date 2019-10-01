@@ -107,9 +107,9 @@ if __name__ == '__main__':
   # test score
   single_tree.fit(Xtrain, Ytrain)
   baseline.fit(Xtrain, Ytrain)
-  print("test score single tree:", single_tree.score(Xtest, Ytest))
-  print("test score baseline:", baseline.score(Xtest, Ytest))
-  print("test score forest:", model.score(Xtest, Ytest))
+  print("r-squared single tree:", single_tree.score(Xtest, Ytest))
+  print("r-squared baseline:", baseline.score(Xtest, Ytest))
+  print("r-squared forest:", model.score(Xtest, Ytest))
   
 
 # Question 3
