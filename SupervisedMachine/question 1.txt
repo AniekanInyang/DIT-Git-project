@@ -1,0 +1,9 @@
+the difference between bayes and naive bayes model:
+
+1. Bayes model assumes that the events are conditional and dependent
+while Naive bayes model assumes that the events are independent
+
+2. Naive bayes model uses "smoothing" to avoid the problem of having Zero
+while Bayes model does not make use of smoothing
+
+3.  bayes model uses covariance while naive bayes model uses variance
